@@ -1,0 +1,246 @@
+@import "tailwindcss";
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+/* ================================================
+   COSMIC PREMIUM THEME
+   ================================================ */
+
+body {
+  min-height: 100vh;
+  position: relative;
+  color: #e2e8f0;
+  overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ── Cosmic Canvas Background ─────────────────── */
+.cosmic-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%,   rgba(109,40,217,0.22) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 50% at 90% 80%,  rgba(37,99,235,0.18) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 40% at 10% 90%,  rgba(16,185,129,0.10) 0%, transparent 60%),
+    linear-gradient(175deg, #05030f 0%, #0a0618 40%, #060d1f 100%);
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* ── Star Layers ──────────────────────────────── */
+#stars-sm, #stars-md, #stars-lg {
+  position: absolute;
+  inset: -100vh 0 0;
+  height: 200vh;
+}
+
+#stars-sm {
+  background-image:
+    radial-gradient(1px 1px at 10% 12%, #fff 0%, transparent 100%),
+    radial-gradient(1px 1px at 20% 35%, #fff 0%, transparent 100%),
+    radial-gradient(1px 1px at 30% 5%,  #fff 0%, transparent 100%),
+    radial-gradient(1px 1px at 40% 60%, #fff 0%, transparent 100%),
+    radial-gradient(1px 1px at 50% 22%, #fff 0%, transparent 100%),
+    radial-gradient(1px 1px at 60% 78%, #fff 0%, transparent 100%),
+    radial-gradient(1px 1px at 70% 48%, #fff 0%, transparent 100%),
+    radial-gradient(1px 1px at 80% 15%, #fff 0%, transparent 100%),
+    radial-gradient(1px 1px at 90% 88%, #fff 0%, transparent 100%),
+    radial-gradient(1px 1px at 15% 75%, #fff 0%, transparent 100%),
+    radial-gradient(1px 1px at 25% 90%, #fff 0%, transparent 100%),
+    radial-gradient(1px 1px at 35% 40%, #fff 0%, transparent 100%),
+    radial-gradient(1px 1px at 45% 55%, #fff 0%, transparent 100%),
+    radial-gradient(1px 1px at 55% 10%, #fff 0%, transparent 100%),
+    radial-gradient(1px 1px at 65% 95%, #fff 0%, transparent 100%),
+    radial-gradient(1px 1px at 75% 30%, #fff 0%, transparent 100%),
+    radial-gradient(1px 1px at 85% 65%, #fff 0%, transparent 100%),
+    radial-gradient(1px 1px at 95% 42%, #fff 0%, transparent 100%),
+    radial-gradient(1px 1px at 3%  55%, #fff 0%, transparent 100%),
+    radial-gradient(1px 1px at 8%  28%, #fff 0%, transparent 100%),
+    radial-gradient(1px 1px at 12% 92%, #fff 0%, transparent 100%),
+    radial-gradient(1px 1px at 17% 18%, rgba(200,180,255,0.9) 0%, transparent 100%),
+    radial-gradient(1px 1px at 22% 62%, rgba(180,220,255,0.9) 0%, transparent 100%),
+    radial-gradient(1px 1px at 28% 47%, #fff 0%, transparent 100%),
+    radial-gradient(1px 1px at 33% 73%, rgba(255,200,200,0.8) 0%, transparent 100%),
+    radial-gradient(1px 1px at 38% 25%, #fff 0%, transparent 100%),
+    radial-gradient(1px 1px at 43% 85%, #fff 0%, transparent 100%),
+    radial-gradient(1px 1px at 48% 38%, rgba(180,220,255,0.9) 0%, transparent 100%),
+    radial-gradient(1px 1px at 53% 67%, #fff 0%, transparent 100%),
+    radial-gradient(1px 1px at 58% 13%, rgba(200,180,255,0.9) 0%, transparent 100%),
+    radial-gradient(1px 1px at 63% 52%, #fff 0%, transparent 100%),
+    radial-gradient(1px 1px at 68% 82%, #fff 0%, transparent 100%),
+    radial-gradient(1px 1px at 73% 20%, rgba(255,220,180,0.9) 0%, transparent 100%),
+    radial-gradient(1px 1px at 78% 58%, #fff 0%, transparent 100%),
+    radial-gradient(1px 1px at 83% 8%,  #fff 0%, transparent 100%),
+    radial-gradient(1px 1px at 88% 44%, rgba(180,220,255,0.9) 0%, transparent 100%),
+    radial-gradient(1px 1px at 93% 70%, #fff 0%, transparent 100%),
+    radial-gradient(1px 1px at 98% 32%, #fff 0%, transparent 100%);
+  animation: drift 120s linear infinite;
+}
+
+#stars-md {
+  background-image:
+    radial-gradient(1.5px 1.5px at 7%  17%, rgba(255,255,255,0.95) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 18% 55%, rgba(200,180,255,1.0) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 29% 82%, rgba(255,255,255,0.95) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 41% 28%, rgba(180,220,255,1.0) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 52% 70%, rgba(255,255,255,0.9) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 63% 14%, rgba(255,220,180,1.0) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 74% 93%, rgba(255,255,255,0.9) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 86% 37%, rgba(200,180,255,1.0) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 96% 61%, rgba(255,255,255,0.9) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 14% 44%, rgba(180,220,255,1.0) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 36% 6%,  rgba(255,255,255,0.9) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 57% 88%, rgba(255,200,200,1.0) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 79% 22%, rgba(255,255,255,0.9) 0%, transparent 100%);
+  animation: drift 80s linear infinite;
+}
+
+#stars-lg {
+  background-image:
+    radial-gradient(2.5px 2.5px at 5%  30%, rgba(255,255,255,1.0) 0%, transparent 100%),
+    radial-gradient(3px   3px   at 24% 65%, rgba(200,180,255,1.0) 0%, transparent 100%),
+    radial-gradient(2px   2px   at 44% 15%, rgba(180,220,255,1.0) 0%, transparent 100%),
+    radial-gradient(3px   3px   at 67% 50%, rgba(255,220,180,1.0) 0%, transparent 100%),
+    radial-gradient(2px   2px   at 82% 80%, rgba(255,255,255,1.0) 0%, transparent 100%),
+    radial-gradient(2.5px 2.5px at 91% 20%, rgba(200,255,200,1.0) 0%, transparent 100%);
+  animation: drift 50s linear infinite;
+  filter: drop-shadow(0 0 4px rgba(200, 180, 255, 0.6));
+}
+
+@keyframes drift {
+  from { transform: translateY(0); }
+  to   { transform: translateY(50vh); }
+}
+
+/* ── Shooting Stars ───────────────────────────── */
+.shooting-stars {
+  position: absolute;
+  inset: 0;
+}
+
+.shooting-star {
+  position: absolute;
+  height: 1px;
+  background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 50%, rgba(180,180,255,0.4) 100%);
+  border-radius: 999px;
+  animation: shoot linear infinite;
+  opacity: 0;
+}
+
+.shooting-star::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: -1px;
+  width: 4px;
+  height: 4px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 6px 2px rgba(200,200,255,0.8);
+}
+
+.s1  { width: 160px; top: 12%; left: 60%; animation-duration: 4s;  animation-delay: 0.5s;  transform: rotate(-35deg); }
+.s2  { width: 120px; top: 28%; left: 80%; animation-duration: 5s;  animation-delay: 2.3s;  transform: rotate(-32deg); }
+.s3  { width: 200px; top: 8%;  left: 25%; animation-duration: 6s;  animation-delay: 4.1s;  transform: rotate(-38deg); }
+.s4  { width: 100px; top: 50%; left: 70%; animation-duration: 3.5s;animation-delay: 7s;   transform: rotate(-30deg); }
+.s5  { width: 180px; top: 20%; left: 5%;  animation-duration: 5.5s;animation-delay: 9.2s; transform: rotate(-36deg); }
+.s6  { width: 140px; top: 35%; left: 45%; animation-duration: 4.5s;animation-delay: 11.5s;transform: rotate(-33deg); }
+
+@keyframes shoot {
+  0%   { opacity: 0; transform: rotate(var(--r, -35deg)) translateX(0); }
+  5%   { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { opacity: 0; transform: rotate(var(--r, -35deg)) translateX(-700px); }
+}
+
+/* ── Nebula Glows ─────────────────────────────── */
+.nebula {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.nebula-1 {
+  width: 70vw; height: 70vw;
+  top: -25%; left: -20%;
+  background: radial-gradient(circle, rgba(109,40,217,0.35) 0%, rgba(109,40,217,0.08) 45%, transparent 70%);
+  filter: blur(70px);
+  animation: nebulaPulse 18s ease-in-out infinite alternate;
+}
+
+.nebula-2 {
+  width: 80vw; height: 80vw;
+  bottom: -35%; right: -25%;
+  background: radial-gradient(circle, rgba(37,99,235,0.30) 0%, rgba(37,99,235,0.07) 45%, transparent 70%);
+  filter: blur(80px);
+  animation: nebulaPulse 22s ease-in-out infinite alternate-reverse;
+}
+
+.nebula-3 {
+  width: 40vw; height: 40vw;
+  top: 40%; left: 35%;
+  background: radial-gradient(circle, rgba(16,185,129,0.12) 0%, transparent 65%);
+  filter: blur(60px);
+  animation: nebulaPulse 15s ease-in-out infinite alternate;
+  animation-delay: -5s;
+}
+
+@keyframes nebulaPulse {
+  0%   { transform: scale(1)    translate(0,     0);     opacity: 0.8; }
+  33%  { transform: scale(1.08) translate(3%,   4%);    opacity: 1; }
+  66%  { transform: scale(0.95) translate(-3%,  -2%);   opacity: 0.7; }
+  100% { transform: scale(1.05) translate(2%,   -4%);   opacity: 0.9; }
+}
+
+/* ── Glass Card ───────────────────────────────── */
+@layer utilities {
+  .glass-card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow:
+      0 0  0 0.5px rgba(255,255,255,0.04) inset,
+      0 8px 32px rgba(0,0,0,0.6),
+      0 0 80px rgba(109,40,217,0.08);
+    border-radius: 1.25rem;
+    transition: all 0.35s ease;
+  }
+  .glass-card:hover {
+    border-color: rgba(139,92,246,0.3);
+    box-shadow:
+      0 0 0 0.5px rgba(255,255,255,0.07) inset,
+      0 12px 48px rgba(0,0,0,0.7),
+      0 0 60px rgba(109,40,217,0.20);
+  }
+
+  /* Enhanced shadow utilities */
+  .shadow-3xl {
+    box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25), 0 0 40px rgba(124, 58, 237, 0.1);
+  }
+}
+
+/* ── Text gradient helpers ────────────────────── */
+.cosmic-gradient-text {
+  background: linear-gradient(135deg, #c4b5fd 0%, #93c5fd 50%, #67e8f9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Glow button pulse ring ───────────────────── */
+@keyframes ringPulse {
+  0%   { box-shadow: 0 0 0 0   rgba(139,92,246,0.6); }
+  70%  { box-shadow: 0 0 0 10px rgba(139,92,246,0); }
+  100% { box-shadow: 0 0 0 0   rgba(139,92,246,0); }
+}
+.btn-pulse { animation: ringPulse 2s ease-out infinite; }

@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # RewriteBase specifies the base URL path
+  RewriteBase /Motor/
+
+  # If the request is already for the out/ directory, don't do anything
+  RewriteCond %{REQUEST_URI} !^/Motor/out/
+
+  # Rewrite everything else to the out/ folder
+  RewriteRule ^(.*)$ out/$1 [L]
+</IfModule>
