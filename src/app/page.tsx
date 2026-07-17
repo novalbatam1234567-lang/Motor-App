@@ -265,8 +265,9 @@ function getSecondaryColor(memberName: string): string {
   return '#2563EB'; // Darker blue for all
 }
 import type { Variants } from 'framer-motion';
+import { About } from '@/components/About';
 
-type Step = 'landing' | 'onboarding' | 'diagnose' | 'result' | 'how-it-works' | 'team';
+type Step = 'landing' | 'onboarding' | 'diagnose' | 'result' | 'how-it-works' | 'team' | 'about';
 
 const PAGE: Variants = {
   initial:  { opacity: 0, scale: 0.97, filter: 'blur(8px)' },
@@ -315,6 +316,10 @@ export default function Home() {
                 <button onClick={() => onReset()} 
                   className="px-3 py-2 rounded-lg font-semibold text-slate-400 hover:text-white hover:bg-white/10 transition-all text-xs cursor-pointer pointer-events-auto border border-transparent hover:border-white/10">
                   Beranda
+                </button>
+                <button onClick={() => setStep('about')} 
+                  className="px-3 py-2 rounded-lg font-semibold text-slate-400 hover:text-white hover:bg-white/10 transition-all text-xs cursor-pointer pointer-events-auto border border-transparent hover:border-white/10">
+                  Tentang Kami
                 </button>
                 <button onClick={() => setStep('team')} 
                   className="px-3 py-2 rounded-lg font-semibold text-slate-400 hover:text-white hover:bg-white/10 transition-all text-xs cursor-pointer pointer-events-auto border border-transparent hover:border-white/10 flex items-center gap-1.5">
@@ -518,10 +523,79 @@ export default function Home() {
 
         {step === 'how-it-works' && (
           <motion.div key="how-it-works" variants={PAGE} initial="initial" animate="animate" exit="exit"
-            className="absolute inset-0 flex flex-col">
-            <PageShell title="Cara Kerja" sub="Alur Sistem Diagnosa" onBack={onReset} backLabel="Kembali">
+            className="absolute inset-0 flex flex-col"
+          >
+            <nav className="flex-none flex items-center justify-between px-8 md:px-14 h-16 relative z-50"
+              style={{ borderBottom:'1px solid rgba(255,255,255,0.05)' }}>
+              <div className="flex items-center gap-2.5">
+                <div className="w-7 h-7 rounded-lg flex items-center justify-center"
+                  style={{ background:'linear-gradient(135deg,#7c3aed,#2563eb)', boxShadow:'0 0 12px rgba(124,58,237,0.6)' }}>
+                  <Wrench size={14} className="text-white" />
+                </div>
+                <span className="font-black text-sm tracking-tight" style={{
+                  background:'linear-gradient(90deg,#e2e8f0,#94a3b8)',
+                  WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent',
+                }}>MotoDiagnose</span>
+              </div>
+
+              <div className="text-center hidden md:block">
+                <div className="text-xs font-bold text-white">Cara Kerja</div>
+                <div className="text-[11px] text-slate-500">Alur Sistem Diagnosa</div>
+              </div>
+
+              <div className="flex items-center gap-2">
+                <button onClick={onReset}
+                  className="text-xs font-bold px-4 py-2 rounded-xl text-slate-400 hover:text-white transition-all hover:bg-white/[0.05]">
+                  ← Kembali
+                </button>
+              </div>
+            </nav>
+
+            <div className="flex-1 overflow-y-auto px-6 text-center relative" style={{ 
+              scrollbarWidth: 'thin', 
+              scrollbarColor: 'rgba(139,92,246,0.3) transparent' 
+            }}>
               <HowItWorks />
-            </PageShell>
+            </div>
+          </motion.div>
+        )}
+
+        {step === 'about' && (
+          <motion.div key="about" variants={PAGE} initial="initial" animate="animate" exit="exit"
+            className="absolute inset-0 flex flex-col"
+          >
+            <nav className="flex-none flex items-center justify-between px-8 md:px-14 h-16 relative z-50"
+              style={{ borderBottom:'1px solid rgba(255,255,255,0.05)' }}>
+              <div className="flex items-center gap-2.5">
+                <div className="w-7 h-7 rounded-lg flex items-center justify-center"
+                  style={{ background:'linear-gradient(135deg,#7c3aed,#2563eb)', boxShadow:'0 0 12px rgba(124,58,237,0.6)' }}>
+                  <Wrench size={14} className="text-white" />
+                </div>
+                <span className="font-black text-sm tracking-tight" style={{
+                  background:'linear-gradient(90deg,#e2e8f0,#94a3b8)',
+                  WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent',
+                }}>MotoDiagnose</span>
+              </div>
+
+              <div className="text-center hidden md:block">
+                <div className="text-xs font-bold text-white">Tentang Kami</div>
+                <div className="text-[11px] text-slate-500">Platform Diagnosis Motor AI</div>
+              </div>
+
+              <div className="flex items-center gap-2">
+                <button onClick={onReset}
+                  className="text-xs font-bold px-4 py-2 rounded-xl text-slate-400 hover:text-white transition-all hover:bg-white/[0.05]">
+                  ← Kembali
+                </button>
+              </div>
+            </nav>
+
+            <div className="flex-1 overflow-y-auto relative" style={{ 
+              scrollbarWidth: 'thin', 
+              scrollbarColor: 'rgba(139,92,246,0.3) transparent' 
+            }}>
+              <About />
+            </div>
           </motion.div>
         )}
 

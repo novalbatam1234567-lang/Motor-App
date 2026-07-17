@@ -1,8 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // output: "export", // Hapus atau comment baris ini agar aplikasi berjalan di mode serverless
-  // basePath: "/Motor", // Hapus atau comment agar aplikasi terbuka di halaman utama (root)
+  output: "export", // Enable static export untuk XAMPP Apache
+  basePath: "/Motor", // Set basePath untuk folder Motor di XAMPP
+  trailingSlash: true,
   images: {
     unoptimized: true,
   }
